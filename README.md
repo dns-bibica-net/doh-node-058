@@ -31,7 +31,7 @@ A secure, high-performance DNS-over-HTTPS (DoH) proxy running on Cloudflare's gl
 2.  Connect your GitHub and select the forked repository.
 3.  **Build Settings**: Leave everything as **default** (no changes needed).
 4.  **Save and Deploy**.
-5.  **Important:** Go to the **Actions** tab in your GitHub repository, select `Update DNS Blocklists`, and click **Enable workflow**. Then, click **Run workflow** to fetch the initial blocklists.
+5.  **Important:** Go to the **Actions** tab in your GitHub repository and click **I understand my workflows, go ahead and enable them**.
 
 ---
 
@@ -71,7 +71,7 @@ Detailed rules:
 
 *   **`blocklists.txt`** / **`allowlists.txt`**: Automatically updated **every hour**.
     *   **Logic**: Domains in `allowlists.txt` override `blocklists.txt`, ensuring they are never blocked even if flagged by a filter (prevents false positives).
-    *   **How to configure**: Edit the URLs in the `curl` command inside [update_lists.sh#L34-L43](update_lists.sh) to add or remove filtering sources.
+    *   **How to configure**: Edit the URLs in the `curl` command inside [update_lists.sh](update_lists.sh#L34-L43) to add or remove filtering sources.
 *   **`private_tlds.txt`**: Add your custom local domains or router URLs here.
 *   **`redirect_rules.txt`**: Redirects domain A to domain B using a CNAME record. Perfect for forcing specific CDN results.
     *   **Format**: `source-domain target-domain`
